@@ -13,6 +13,7 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordField: UITextField!
     
+    @IBOutlet weak var loginButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -35,24 +36,21 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         guard let login = loginField.text,
-              let password = passwordField.text else {return}
+              let password = passwordField.text
+        else {return}
             
         
         if  login == "",
             password == "" {
-            print("Good")
               loginField.backgroundColor = .green
                 passwordField.backgroundColor = .green
-        } else {
+        performSegue(withIdentifier: "firstScreen", sender: nil)
+        }
+        else {
                 loginField.backgroundColor = .red
                     passwordField.backgroundColor = .red
                     return
                 }
-    
     }
-    
-    
-    
-    
 
 }
