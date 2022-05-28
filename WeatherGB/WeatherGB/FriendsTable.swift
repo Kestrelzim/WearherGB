@@ -9,7 +9,21 @@ import UIKit
 
 class FriendsTable: UITableViewController {
 
-    let friendsMatch = [
+    
+    @IBAction func addSelectFriend(segue: UIStoryboardSegue) {
+       if let sourceVC = segue.source as? AllFriendsViewController,
+          let indexPath = sourceVC.tableView.indexPathForSelectedRow {
+           let friend = sourceVC.friendsSearch[indexPath.row]
+           if !friendsMatch.contains(where: {$0.name == friend.name}) {
+           friendsMatch.append(friend)
+            tableView.reloadData()
+           }
+       }
+           
+        segue.destination
+    }
+    
+    var friendsMatch = [
         friendsList(imageFriend: UIImage.init(named:"pngegg"), nameFriend: "Malkolm"),
         friendsList(imageFriend: UIImage.init(named: "2021-09-04 22-59-11_1630923467"), nameFriend: "Nasty"),
         friendsList(imageFriend: UIImage.init(named: "png-transparent-cloud-cover-weather-rain-cloudy-weather-cloud-computer-wallpaper-fictional-character"), nameFriend: "Vik"),
@@ -66,6 +80,17 @@ class FriendsTable: UITableViewController {
 
         return cell
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showPhoto",
+           let destinationVC = segue.destination as? GalleryCollection,
+           let indexPath = tableView.indexPathForSelectedRow {
+            let friend = friendsMatch[indexPath.row].name
+            destinationVC.title = friend
+        }
+    }
+    
     
 
     /*

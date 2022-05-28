@@ -54,8 +54,6 @@
 		6538ACA72840E7AD002C00A9 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				65B66FCD283E037200626294 /* Friend.swift */,
-				6538ACA52840995B002C00A9 /* PhotoCollectionViewCell.swift */,
 			);
 			name = view;
 			path = cell;
@@ -64,7 +62,6 @@
 		6538ACA82840E80A002C00A9 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				65B66FD6283F567400626294 /* friends.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -72,7 +69,6 @@
 		6538ACA92840E81F002C00A9 /* Collection */ = {
 			isa = PBXGroup;
 			children = (
-				6538ACA3284098C8002C00A9 /* GalleryCollection.swift */,
 			);
 			path = Collection;
 			sourceTree = "<group>";
@@ -98,11 +94,18 @@
 			children = (
 				656CF514281FB0DD005D3E1D /* AppDelegate.swift */,
 				656CF516281FB0DD005D3E1D /* SceneDelegate.swift */,
+				65E4D4DC2834BBDC004C4308 /* LoginViewController.swift */,
+				65B66FD0283E05BA00626294 /* FriendsTable.swift */,
+				652DB817283FCBCD00291D59 /* AllFriendsViewController.swift */,
 				65B66FC8283D295300626294 /* controllers */,
 				6538ACA72840E7AD002C00A9 /* view */,
 				6538ACA92840E81F002C00A9 /* Collection */,
 				6538ACA82840E80A002C00A9 /* model */,
 				65B66FD4283F503500626294 /* FriendsView.swift */,
+				65B66FCD283E037200626294 /* Friend.swift */,
+				6538ACA3284098C8002C00A9 /* GalleryCollection.swift */,
+				6538ACA52840995B002C00A9 /* PhotoCollectionViewCell.swift */,
+				65B66FD6283F567400626294 /* friends.swift */,
 				656CF51A281FB0DD005D3E1D /* Main.storyboard */,
 				656CF51D281FB0DE005D3E1D /* Assets.xcassets */,
 				656CF51F281FB0DE005D3E1D /* LaunchScreen.storyboard */,
@@ -114,9 +117,6 @@
 		65B66FC8283D295300626294 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				65E4D4DC2834BBDC004C4308 /* LoginViewController.swift */,
-				65B66FD0283E05BA00626294 /* FriendsTable.swift */,
-				652DB817283FCBCD00291D59 /* AllFriendsViewController.swift */,
 			);
 			path = controllers;
 			sourceTree = "<group>";

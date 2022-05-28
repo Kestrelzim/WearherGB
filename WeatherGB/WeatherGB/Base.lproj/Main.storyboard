@@ -170,7 +170,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="photo" id="h6Y-zj-asQ" customClass="PhotoCollectionViewCell" customModule="WeatherGB" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="198" height="180"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T0r-sR-LAI">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" id="T0r-sR-LAI">
                                     <rect key="frame" x="0.0" y="0.0" width="198" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -310,7 +310,7 @@
                                 <connections>
                                     <outlet property="avatarFriend" destination="PQT-rc-vHN" id="uK6-um-ESp"/>
                                     <outlet property="nameFriend" destination="zzV-3M-GoM" id="S0K-iI-upa"/>
-                                    <segue destination="HUZ-WC-62L" kind="show" id="OWZ-4Z-JAE"/>
+                                    <segue destination="HUZ-WC-62L" kind="show" identifier="showPhoto" id="OWZ-4Z-JAE"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -350,6 +350,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="c85-uq-Vzn" kind="unwind" unwindAction="addSelectFriendWithSegue:" id="BzH-ti-xam"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -369,6 +372,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pj3-rb-7nl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="c85-uq-Vzn" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5604" y="-783"/>
         </scene>

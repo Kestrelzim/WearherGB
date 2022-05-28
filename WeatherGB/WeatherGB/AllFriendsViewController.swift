@@ -20,22 +20,21 @@ class AllFriendsViewController: UIViewController {
 
         
     
-    let friendsMatch = [
-        friendsList(imageFriend: UIImage.init(named:"pngegg"), nameFriend: "Malkolm"),
-        friendsList(imageFriend: UIImage.init(named: "2021-09-04 22-59-11_1630923467"), nameFriend: "Nasty"),
-        friendsList(imageFriend: UIImage.init(named: "png-transparent-cloud-cover-weather-rain-cloudy-weather-cloud-computer-wallpaper-fictional-character"), nameFriend: "Vik"),
-        friendsList(imageFriend: UIImage.init(named: "IMG_4779"), nameFriend: "Alex"),
-        friendsList(imageFriend: UIImage.init(named: "IMG_1589"), nameFriend: "Dok"),
-    friendsList(imageFriend: nil, nameFriend: "Aleksey"),
-    friendsList(imageFriend: nil, nameFriend: "Mart"),
-    friendsList(imageFriend: nil, nameFriend: "Sultan"),
-    friendsList(imageFriend: nil, nameFriend: "Predat"),
-    friendsList(imageFriend: nil, nameFriend: "Max"),
-    friendsList(imageFriend: nil, nameFriend: "Borod"),
-    friendsList(imageFriend: nil, nameFriend: "Something"),
-    friendsList(imageFriend: nil, nameFriend: "Int"),
-    friendsList(imageFriend: nil, nameFriend: "the"),
-    friendsList(imageFriend: nil, nameFriend: "Way")
+    let friendsSearch = [
+        friendsList(imageFriend: UIImage.init(named:"pngegg"), nameFriend: "fghgf"),
+        friendsList(imageFriend: UIImage.init(named: "2021-09-04 22-59-11_1630923467"), nameFriend: "eqweqw"),
+        friendsList(imageFriend: UIImage.init(named: "IMG_4779"), nameFriend: "dew"),
+        friendsList(imageFriend: UIImage.init(named: "IMG_1589"), nameFriend: "dasdqwe"),
+    friendsList(imageFriend: nil, nameFriend: "rteter"),
+    friendsList(imageFriend: nil, nameFriend: "wefew"),
+    friendsList(imageFriend: nil, nameFriend: "eqw"),
+    friendsList(imageFriend: nil, nameFriend: "dewt"),
+    friendsList(imageFriend: nil, nameFriend: "12342"),
+    friendsList(imageFriend: nil, nameFriend: "eqe"),
+    friendsList(imageFriend: nil, nameFriend: "dqe"),
+    friendsList(imageFriend: nil, nameFriend: "asd"),
+    friendsList(imageFriend: nil, nameFriend: "Asd"),
+    friendsList(imageFriend: nil, nameFriend: "Max")
 
     ]
     
@@ -60,14 +59,14 @@ class AllFriendsViewController: UIViewController {
 }
 extension AllFriendsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        friendsMatch.count
+        friendsSearch.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "allFriends", for: indexPath)
         
         var content = cell.defaultContentConfiguration()
-        content.image = friendsMatch[indexPath.row].image
+        content.image = friendsSearch[indexPath.row].image
         
         
         cell.contentConfiguration = content
