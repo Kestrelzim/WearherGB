@@ -1,48 +1,25 @@
 //
-//  FriendsTable.swift
+//  GroupTableViewController.swift
 //  WeatherGB
 //
-//  Created by Aleksy on 25.05.2022.
+//  Created by Aleksy on 28.05.2022.
 //
 
 import UIKit
 
-class FriendsTable: UITableViewController {
+class GroupTableViewController: UITableViewController {
 
     
-    @IBAction func addSelectFriend(segue: UIStoryboardSegue) {
-       if let sourceVC = segue.source as? AllFriendsViewController,
-          let indexPath = sourceVC.tableView.indexPathForSelectedRow {
-           let friend = sourceVC.friendsSearch[indexPath.row]
-           if !friendsMatch.contains(where: {$0.name == friend.name}) {
-           friendsMatch.append(friend)
-            tableView.reloadData()
-           }
-       }
-           
-        segue.destination
+    @IBAction func addGroup(segue: UIStoryboardSegue) {
+        
     }
     
-    var friendsMatch = [
-        friendsList(imageFriend: UIImage.init(named:"pngegg"), nameFriend: "Malkolm"),
-        friendsList(imageFriend: UIImage.init(named: "2021-09-04 22-59-11_1630923467"), nameFriend: "Nasty"),
-        friendsList(imageFriend: UIImage.init(named: "png-transparent-cloud-cover-weather-rain-cloudy-weather-cloud-computer-wallpaper-fictional-character"), nameFriend: "Vik"),
-        friendsList(imageFriend: UIImage.init(named: "IMG_4779"), nameFriend: "Alex"),
-        friendsList(imageFriend: UIImage.init(named: "IMG_1589"), nameFriend: "Dok"),
-    friendsList(imageFriend: nil, nameFriend: "Aleksey"),
-    friendsList(imageFriend: nil, nameFriend: "Mart"),
-    friendsList(imageFriend: nil, nameFriend: "Sultan"),
-    friendsList(imageFriend: nil, nameFriend: "Predat"),
-    friendsList(imageFriend: nil, nameFriend: "Max"),
-    friendsList(imageFriend: nil, nameFriend: "Borod"),
-    friendsList(imageFriend: nil, nameFriend: "Something"),
-    friendsList(imageFriend: nil, nameFriend: "Int"),
-    friendsList(imageFriend: nil, nameFriend: "the"),
-    friendsList(imageFriend: nil, nameFriend: "Way")
-
+    var followGroup = [
+        group.init(image: UIImage.init(systemName: "person.3.fill"), nameGroup: "APB", descrpition: "Продажа лекарственных средств", create: 2010), group.init(image: UIImage.init(systemName: "person.3.fill"), nameGroup: "Club221", descrpition: "Some times party, mostly nothing", create: 2000), group.init(image: UIImage.init(systemName: "person.3.fill"), nameGroup: "kinder", descrpition: "like tinder but for parents", create: 2006),group.init(image: UIImage.init(systemName: "person.3.fill"), nameGroup: "Quiz Squiz", descrpition: "Game like Jepardy, you know?", create: 2007)
+    
     ]
     
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,35 +40,21 @@ class FriendsTable: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return friendsMatch.count
+        return followGroup.count
+        
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     guard let cell = tableView.dequeueReusableCell(withIdentifier: "friendCell", for: indexPath) as? Friend else { preconditionFailure("Error")}
-
-        cell.nameFriend.text = friendsMatch[indexPath.row].name
-        cell.avatarFriend.image = friendsMatch[indexPath.row].image
+       guard let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as? GroupTableViewCell else { preconditionFailure("Error")}
         
+        cell.nameGroup.text = followGroup[indexPath.row].nameGroup
+        cell.avatarGroup.image = followGroup[indexPath.row].image
         
-        print(indexPath.section)
-        print(indexPath.row)
         // Configure the cell...
 
         return cell
     }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showPhoto",
-           let destinationVC = segue.destination as? GalleryCollection,
-           let indexPath = tableView.indexPathForSelectedRow {
-            let friend = friendsMatch[indexPath.row].name
-            destinationVC.title = friend
-        }
-    }
-    
-    
 
     /*
     // Override to support conditional editing of the table view.
@@ -139,4 +102,3 @@ class FriendsTable: UITableViewController {
     */
 
 }
-
